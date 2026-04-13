@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헬스케어경영전공 전환 의견 수렴</title>
+  <!-- Open Graph / KakaoTalk 썸네일 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sdkparkforbi.github.io/opinion/">
+  <meta property="og:title" content="경영학전공 → 헬스케어경영전공 | 학생 의견 수렴">
+  <meta property="og:description" content="전공명 변경에 대한 여러분의 의견을 들려주세요. 익명 제출 가능 · 마감 4월 14일(화) 23:59">
+  <meta property="og:image" content="https://sdkparkforbi.github.io/opinion/og-thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://sdkparkforbi.github.io/opinion/og-thumbnail.png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1B6B5A;
+    --primary-light: #2D8C6B;
+    --primary-pale: #EAF5F1;
+    --accent: #E8A83E;
+    --accent-light: #FDF3E0;
+    --danger: #C0392B;
+    --danger-light: #FDEDEB;
+    --neutral: #F7F9F8;
+    --text: #1A2B25;
+    --text-muted: #6B8279;
+    --border: #D0E4DC;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--neutral);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1B6B5A 0%, #2D8C6B 60%, #3AA882 100%);
+    color: white;
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .header-sub {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 28px;
+  }
+
+  /* Countdown */
+  .countdown-wrap {
+    display: inline-flex;
+    gap: 12px;
+    background: rgba(0,0,0,0.2);
+    padding: 14px 24px;
+    border-radius: 12px;
+    align-items: center;
+  }
+  .countdown-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-right: 4px;
+  }
+  .countdown-unit {
+    text-align: center;
+  }
+  .countdown-num {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown-unit-label {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+  .countdown-sep {
+    font-size: 20px;
+    font-weight: 700;
+    opacity: 0.6;
+    padding-bottom: 8px;
+  }
+  .deadline-text {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-top: 10px;
+  }
+
+  /* Main */
+  .main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 16px 60px;
+  }
+
+  /* Info card */
+  .info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 12px rgba(27,107,90,0.08);
+  }
+  .info-card h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+  .change-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .change-tag {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .change-from { background: #F2F2F2; color: #555; }
+  .change-arrow { font-size: 20px; color: var(--primary); }
+  .change-to { background: var(--primary-pale); color: var(--primary); }
+  .info-desc {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* Form card */
+  .form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(27,107,90,0.08);
+  }
+
+  .form-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    color: var(--text);
+  }
+  label .req {
+    color: var(--primary-light);
+    margin-left: 2px;
+  }
+  label .opt {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-left: 4px;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  input[type="text"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(45,140,107,0.12);
+  }
+  textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+
+  /* Stance selector */
+  .stance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .stance-opt {
+    position: relative;
+  }
+  .stance-opt input { display: none; }
+  .stance-opt label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    gap: 4px;
+    margin: 0;
+  }
+  .stance-opt label .emoji { font-size: 22px; }
+  .stance-opt label .stance-label { font-size: 13px; font-weight: 600; }
+  .stance-opt input:checked + label.agree {
+    border-color: var(--primary);
+    background: var(--primary-pale);
+    color: var(--primary);
+  }
+  .stance-opt input:checked + label.cond {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    color: #8B6320;
+  }
+  .stance-opt input:checked + label.disagree {
+    border-color: var(--danger);
+    background: var(--danger-light);
+    color: var(--danger);
+  }
+  .stance-opt label:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+  /* Dynamic reason areas */
+  .reason-area {
+    display: none;
+    animation: fadeIn 0.25s ease;
+  }
+  .reason-area.visible { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .reason-header {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  .reason-agree { background: var(--primary-pale); color: var(--primary); }
+  .reason-cond { background: var(--accent-light); color: #8B6320; }
+  .reason-disagree { background: var(--danger-light); color: var(--danger); }
+
+  .reason-prompts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .prompt-chip {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1.5px solid;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .chip-agree { border-color: var(--primary-light); color: var(--primary); }
+  .chip-agree:hover, .chip-agree.selected { background: var(--primary); color: white; }
+  .chip-cond { border-color: var(--accent); color: #8B6320; }
+  .chip-cond:hover, .chip-cond.selected { background: var(--accent); color: white; }
+  .chip-disagree { border-color: var(--danger); color: var(--danger); }
+  .chip-disagree:hover, .chip-disagree.selected { background: var(--danger); color: white; }
+
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* Submit button */
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,107,90,0.3); }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* Success state */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .success-screen.visible { display: block; }
+  .success-icon { font-size: 64px; margin-bottom: 20px; }
+  .success-screen h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  .success-screen p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+
+  .privacy-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Closed state */
+  .closed-banner {
+    display: none;
+    background: #FDF3E0;
+    border: 1.5px solid var(--accent);
+    color: #8B6320;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-badge">🏥 CHA University 헬스케어융합학부</div>
+  <h1>경영학전공 → 헬스케어경영전공<br>전환에 대한 학생 의견 수렴</h1>
+  <div class="header-sub">여러분의 의견이 전공의 미래를 결정합니다</div>
+
+  <div>
+    <div class="countdown-wrap">
+      <span class="countdown-label">⏱ 마감까지</span>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-h">--</div>
+        <div class="countdown-unit-label">시간</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-m">--</div>
+        <div class="countdown-unit-label">분</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-s">--</div>
+        <div class="countdown-unit-label">초</div>
+      </div>
+    </div>
+    <div class="deadline-text">마감: 2026년 4월 14일 (화) 23:59</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Info card -->
+  <div class="info-card">
+    <h2>📋 전공명 변경 개요</h2>
+    <div class="change-row">
+      <span class="change-tag change-from">경영학전공</span>
+      <span class="change-arrow">→</span>
+      <span class="change-tag change-to">헬스케어경영전공</span>
+    </div>
+    <div class="info-desc">
+      헬스케어융합학부의 방향성을 명확히 하고, 바이오·AI·경영을 융합한 특화 전공으로 브랜딩을 강화하고자 합니다.
+      학생 여러분의 솔직한 의견을 들려주세요.
+    </div>
+  </div>
+
+  <!-- Closed banner (shown after deadline) -->
+  <div class="closed-banner" id="closed-banner">
+    ⚠️ 의견 수렴 기간이 종료되었습니다. 참여해 주셔서 감사합니다.
+  </div>
+
+  <!-- Form card -->
+  <div class="form-card" id="form-card">
+    <div class="success-screen" id="success-screen">
+      <div class="success-icon">✅</div>
+      <h2>의견이 접수되었습니다!</h2>
+      <p>소중한 의견 감사합니다.<br>수렴된 의견은 전공 개편에 반영될 예정입니다.</p>
+    </div>
+
+    <form id="opinion-form">
+      <!-- 기본 정보 -->
+      <div class="form-section-title">기본 정보</div>
+
+      <div class="field-group">
+        <label>이름 <span class="opt">(선택)</span></label>
+        <input type="text" name="name" placeholder="이름을 입력하세요">
+      </div>
+
+      <div class="field-group">
+        <label>학번 / 학년 <span class="req">*</span></label>
+        <input type="text" name="grade" placeholder="예: 2학년 / 23학번" required>
+      </div>
+
+      <div class="field-group">
+        <label>현재 소속 전공 <span class="req">*</span></label>
+        <select name="major" required>
+          <option value="">선택하세요</option>
+          <option value="경영학전공">경영학전공</option>
+          <option value="디지털보건의료전공">디지털보건의료전공</option>
+          <option value="스포츠의학전공">스포츠의학전공</option>
+          <option value="AI헬스케어융합전공">AI헬스케어융합학과</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- 입장 -->
+      <div class="form-section-title">입장 선택</div>
+
+      <div class="field-group">
+        <label>전공명 변경에 대한 입장 <span class="req">*</span></label>
+        <div class="stance-grid">
+          <div class="stance-opt">
+            <input type="radio" name="stance" id="agree" value="찬성" required>
+            <label for="agree" class="agree">
+              <span class="emoji">👍</span>
+              <span class="stance-label">찬성</span>
+            </label>
+          </div>
+          <div class="stance-opt">
+            <input type="radio" name="stance" id="cond" value="조건부 찬성">
+            <label for="cond" class="cond">
+              <span class="emoji">🤔</span>
+              <span class="stance-label">조건부 찬성</span>
+            </label>
+          </div>
+          <div class="stance-opt">
+            <input type="radio" name="stance" id="disagree" value="반대">
+            <label for="disagree" class="disagree">
+              <span class="emoji">👎</span>
+              <span class="stance-label">반대</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 찬성 근거 -->
+      <div class="reason-area" id="area-agree">
+        <div class="field-group">
+          <div class="reason-header reason-agree">찬성하는 주된 이유를 선택해 주세요 (복수 선택 가능)</div>
+          <div class="reason-prompts" id="chips-agree">
+            <span class="prompt-chip chip-agree" data-target="reason-agree">전공 정체성이 명확해짐</span>
+            <span class="prompt-chip chip-agree" data-target="reason-agree">취업·진로에 유리할 것 같음</span>
+            <span class="prompt-chip chip-agree" data-target="reason-agree">학부 브랜드와 일치</span>
+            <span class="prompt-chip chip-agree" data-target="reason-agree">신입생 유치에 도움</span>
+            <span class="prompt-chip chip-agree" data-target="reason-agree">헬스케어 산업 트렌드 반영</span>
+          </div>
+          <textarea name="reason_agree" id="reason-agree" placeholder="위 선택 외에 추가 의견이 있으시면 자유롭게 적어주세요"></textarea>
+        </div>
+      </div>
+
+      <!-- 조건부 찬성 근거 -->
+      <div class="reason-area" id="area-cond">
+        <div class="field-group">
+          <div class="reason-header reason-cond">어떤 조건이 충족되면 찬성하시겠어요?</div>
+          <div class="reason-prompts" id="chips-cond">
+            <span class="prompt-chip chip-cond" data-target="reason-cond">커리큘럼도 함께 개편</span>
+            <span class="prompt-chip chip-cond" data-target="reason-cond">교수진 보강 필요</span>
+            <span class="prompt-chip chip-cond" data-target="reason-cond">졸업 후 경력에 불이익 없을 것</span>
+            <span class="prompt-chip chip-cond" data-target="reason-cond">기업 인지도 높아질 것</span>
+            <span class="prompt-chip chip-cond" data-target="reason-cond">기존 재학생 보호 조치 필요</span>
+          </div>
+          <textarea name="reason_cond" id="reason-cond" placeholder="조건과 우려사항을 자유롭게 적어주세요"></textarea>
+        </div>
+      </div>
+
+      <!-- 반대 근거 -->
+      <div class="reason-area" id="area-disagree">
+        <div class="field-group">
+          <div class="reason-header reason-disagree">반대하는 주된 이유를 선택해 주세요</div>
+          <div class="reason-prompts" id="chips-disagree">
+            <span class="prompt-chip chip-disagree" data-target="reason-disagree">이름이 너무 좁아짐</span>
+            <span class="prompt-chip chip-disagree" data-target="reason-disagree">취업 시 불리할 수 있음</span>
+            <span class="prompt-chip chip-disagree" data-target="reason-disagree">내용 변화 없이 이름만 바뀜</span>
+            <span class="prompt-chip chip-disagree" data-target="reason-disagree">일반 경영학 인지도가 더 높음</span>
+            <span class="prompt-chip chip-disagree" data-target="reason-disagree">재학생 혼란 우려</span>
+          </div>
+          <textarea name="reason_disagree" id="reason-disagree" placeholder="반대 이유와 대안이 있으시면 적어주세요"></textarea>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- 추가 의견 -->
+      <div class="field-group">
+        <label>전공에 바라는 점 <span class="opt">(선택 · 자유 의견)</span></label>
+        <textarea name="extra" placeholder="전공 운영, 커리큘럼, 진로 지원 등 하고 싶은 말씀을 자유롭게 적어주세요"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">의견 제출하기 →</button>
+      <div class="privacy-note">
+        ※ 수집된 의견은 전공 개편 검토 목적으로만 활용되며,<br>이름은 선택 입력으로 익명 제출도 가능합니다.
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // ───── CONFIGURATION ─────
+  // Apps Script 배포 후 아래 URL을 교체하세요
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbznspzagDExEYFFK2UlOmSTxIC4jj83CPTv-V1mGhR0FW8_qg8kppw2UQGbW60-CTzt/exec';
+  const DEADLINE = new Date('2026-04-14T23:59:00+09:00');
+  // ─────────────────────────
+
+  // Countdown
+  function updateCountdown() {
+    const now = new Date();
+    const diff = DEADLINE - now;
+    if (diff <= 0) {
+      document.getElementById('cd-h').textContent = '00';
+      document.getElementById('cd-m').textContent = '00';
+      document.getElementById('cd-s').textContent = '00';
+      document.getElementById('closed-banner').style.display = 'block';
+      document.getElementById('opinion-form').style.display = 'none';
+      return;
+    }
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Stance toggle
+  const stanceInputs = document.querySelectorAll('input[name="stance"]');
+  stanceInputs.forEach(inp => {
+    inp.addEventListener('change', () => {
+      document.getElementById('area-agree').classList.remove('visible');
+      document.getElementById('area-cond').classList.remove('visible');
+      document.getElementById('area-disagree').classList.remove('visible');
+      if (inp.value === '찬성') document.getElementById('area-agree').classList.add('visible');
+      if (inp.value === '조건부 찬성') document.getElementById('area-cond').classList.add('visible');
+      if (inp.value === '반대') document.getElementById('area-disagree').classList.add('visible');
+    });
+  });
+
+  // Prompt chips
+  document.querySelectorAll('.prompt-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('selected');
+      const targetId = chip.dataset.target;
+      const textarea = document.getElementById(targetId);
+      const allChips = chip.closest('.reason-prompts').querySelectorAll('.prompt-chip.selected');
+      const selected = Array.from(allChips).map(c => c.textContent).join(', ');
+      // Append chips to textarea placeholder area
+      const manual = textarea.dataset.manual || '';
+      textarea.value = selected + (manual ? '\n' + manual : '');
+    });
+  });
+
+  // Form submit
+  document.getElementById('opinion-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = '제출 중...';
+
+    const form = e.target;
+    const stance = form.stance.value;
+    const data = {
+      timestamp: new Date().toLocaleString('ko-KR', {timeZone: 'Asia/Seoul'}),
+      name: form.name.value || '익명',
+      grade: form.grade.value,
+      major: form.major.value,
+      stance: stance,
+      reason: stance === '찬성' ? form.reason_agree.value :
+               stance === '조건부 찬성' ? form.reason_cond.value :
+               form.reason_disagree.value,
+      extra: form.extra.value
+    };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      // no-cors → assume success
+      form.style.display = 'none';
+      document.getElementById('success-screen').classList.add('visible');
+    } catch (err) {
+      alert('제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+      btn.disabled = false;
+      btn.textContent = '의견 제출하기 →';
+    }
+  });
+</script>
+</body>
+</html>
