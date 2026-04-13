@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sdkparkforbi.github.io/opinion/">
   <meta property="og:title" content="경영학전공 → 헬스케어경영전공 | 학생 의견 수렴">
-  <meta property="og:description" content="전공명 변경에 대한 여러분의 의견을 들려주세요. 익명 제출 가능 · 마감 4월 14일(화) 23:59">
+  <meta property="og:description" content="전공명 변경에 대한 여러분의 의견을 들려주세요. 마감 4월 14일(화) 23:59">
   <meta property="og:image" content="https://sdkparkforbi.github.io/opinion/og-thumbnail.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -446,24 +446,46 @@
       <div class="form-section-title">기본 정보</div>
 
       <div class="field-group">
-        <label>이름 <span class="opt">(선택)</span></label>
-        <input type="text" name="name" placeholder="이름을 입력하세요">
+        <label>이름 <span class="req">*</span></label>
+        <input type="text" name="name" placeholder="이름을 입력하세요" required>
       </div>
 
       <div class="field-group">
-        <label>학번 / 학년 <span class="req">*</span></label>
-        <input type="text" name="grade" placeholder="예: 2학년 / 23학번" required>
+        <label>학번 <span class="req">*</span></label>
+        <input type="text" name="grade" placeholder="예: 20231234" required>
       </div>
 
       <div class="field-group">
-        <label>현재 소속 전공 <span class="req">*</span></label>
-        <select name="major" required>
+        <label>1전공 <span class="req">*</span></label>
+        <select name="major1" required>
           <option value="">선택하세요</option>
-          <option value="경영학전공">경영학전공</option>
-          <option value="디지털보건의료전공">디지털보건의료전공</option>
-          <option value="스포츠의학전공">스포츠의학전공</option>
-          <option value="AI헬스케어융합전공">AI헬스케어융합학과</option>
-          <option value="기타">기타</option>
+          <option value="세포·유전자재생의학">세포·유전자재생의학</option>
+          <option value="바이오식의약학">바이오식의약학</option>
+          <option value="시스템생명과학">시스템생명과학</option>
+          <option value="스포츠의학">스포츠의학</option>
+          <option value="심리학">심리학</option>
+          <option value="미술치료">미술치료</option>
+          <option value="경영학">경영학</option>
+          <option value="미디어커뮤니케이션학">미디어커뮤니케이션학</option>
+          <option value="AI의료데이터학">AI의료데이터학</option>
+          <option value="소프트웨어융합">소프트웨어융합</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>2전공 <span class="opt">(없으면 '없음' 선택)</span></label>
+        <select name="major2">
+          <option value="없음">없음</option>
+          <option value="세포·유전자재생의학">세포·유전자재생의학</option>
+          <option value="바이오식의약학">바이오식의약학</option>
+          <option value="시스템생명과학">시스템생명과학</option>
+          <option value="스포츠의학">스포츠의학</option>
+          <option value="심리학">심리학</option>
+          <option value="미술치료">미술치료</option>
+          <option value="경영학">경영학</option>
+          <option value="미디어커뮤니케이션학">미디어커뮤니케이션학</option>
+          <option value="AI의료데이터학">AI의료데이터학</option>
+          <option value="소프트웨어융합">소프트웨어융합</option>
         </select>
       </div>
 
@@ -554,7 +576,7 @@
 
       <button type="submit" class="submit-btn" id="submit-btn">의견 제출하기 →</button>
       <div class="privacy-note">
-        ※ 수집된 의견은 전공 개편 검토 목적으로만 활용되며,<br>이름은 선택 입력으로 익명 제출도 가능합니다.
+        ※ 수집된 의견은 전공 개편 검토 목적으로만 활용됩니다.<br>이름과 학번은 중복 제출 확인 용도로만 사용되며 외부에 공개되지 않습니다.
       </div>
     </form>
   </div>
@@ -563,7 +585,7 @@
 <script>
   // ───── CONFIGURATION ─────
   // Apps Script 배포 후 아래 URL을 교체하세요
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbznspzagDExEYFFK2UlOmSTxIC4jj83CPTv-V1mGhR0FW8_qg8kppw2UQGbW60-CTzt/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfqXefrSiuC27G-fzc_2MvvLUUnJx3qKmo1ZqufvNxoCjgQyfP1lvHS8ajnM0u7swT/exec';
   const DEADLINE = new Date('2026-04-14T23:59:00+09:00');
   // ─────────────────────────
 
@@ -627,9 +649,10 @@
     const stance = form.stance.value;
     const data = {
       timestamp: new Date().toLocaleString('ko-KR', {timeZone: 'Asia/Seoul'}),
-      name: form.name.value || '익명',
+      name: form.name.value,
       grade: form.grade.value,
-      major: form.major.value,
+      major1: form.major1.value,
+      major2: form.major2.value,
       stance: stance,
       reason: stance === '찬성' ? form.reason_agree.value :
                stance === '조건부 찬성' ? form.reason_cond.value :
